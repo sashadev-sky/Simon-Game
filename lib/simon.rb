@@ -32,14 +32,15 @@ class Simon
   end
 
   def show_sequence
+    system("clear")
     result = add_random_color
-    p result
+    puts result
     sleep(2)
     system("clear")
   end
 
   def require_sequence
-    puts "please enter the color sequence (ex. red, blue)"
+    puts "please enter the color sequence (ex. color, color)"
     answer = gets.chomp.downcase
     answer_arr = answer.split(", ")
     answer_arr
