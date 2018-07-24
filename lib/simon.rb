@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Simon
   COLORS = %w(red blue green yellow)
 
@@ -30,11 +32,11 @@ class Simon
       @game_over = true
     end
   end
-
+  
   def show_sequence
     system("clear")
     result = add_random_color
-    puts result
+    result.each { |color| puts color.colorize(color.to_sym) }
     sleep(2)
     system("clear")
   end
@@ -47,7 +49,8 @@ class Simon
   end
 
   def add_random_color
-    @seq << COLORS.sample
+    random_color = COLORS.sample
+    @seq << random_color
     @seq
   end
 
