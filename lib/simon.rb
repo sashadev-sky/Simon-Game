@@ -23,7 +23,6 @@ class Simon
     abort("please try again!")
   end
 
-
   def take_turn
     show_sequence
     require_sequence
@@ -54,7 +53,6 @@ class Simon
     end
     sleep 0.25
   end
-
 
   def round_success_message
     puts "Correct. Next round"
