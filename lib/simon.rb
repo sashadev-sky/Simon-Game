@@ -32,11 +32,18 @@ class Simon
       @game_over = true
     end
   end
-  
+
   def show_sequence
     system("clear")
     result = add_random_color
-    result.each { |color| puts color.colorize(color.to_sym) }
+    # result.each { |color| puts color.colorize(color.to_sym) }
+    result.each_with_index do |color, i|
+      if i == result.length - 1
+        print color.colorize(color.to_sym)
+      else
+        print color.colorize(color.to_sym) + ", "
+      end
+    end
     sleep(2)
     system("clear")
   end
