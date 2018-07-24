@@ -1,7 +1,7 @@
 require 'colorize'
 
 class Simon
-  COLORS = %w(red blue green yellow)
+  COLORS = %w(green red yellow blue)
 
   attr_accessor :sequence_length, :game_over, :seq
 
@@ -36,7 +36,6 @@ class Simon
   def show_sequence
     system("clear")
     result = add_random_color
-    # result.each { |color| puts color.colorize(color.to_sym) }
     result.each_with_index do |color, i|
       if i == result.length - 1
         print color.colorize(color.to_sym)
@@ -52,13 +51,11 @@ class Simon
     puts "please enter the color sequence (ex. color, color)"
     answer = gets.chomp.downcase
     answer_arr = answer.split(", ")
-    answer_arr
   end
 
   def add_random_color
     random_color = COLORS.sample
     @seq << random_color
-    @seq
   end
 
   def round_success_message
@@ -66,7 +63,7 @@ class Simon
   end
 
   def game_over_message
-    puts "Sorry, incorrect sequence. You made it #{sequence_length} rounds!"
+    puts "Sorry, incorrect sequence or you typed in your colors wrong. You made it #{sequence_length} rounds!"
   end
 
   def reset_game
