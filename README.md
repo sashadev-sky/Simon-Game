@@ -1,6 +1,6 @@
 # Simon Game
 
- - simple terminal version of Simon
+ - Simple terminal version of Simon
 
 #### Ruby Concepts
 - General Delimited Syntax
