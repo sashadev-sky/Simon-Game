@@ -7,4 +7,4 @@
 - `colorize` gem
 
 #### Pending
-- Create UI that mimics actual Simon Board
+- Create UI that mimics actual Simon board
