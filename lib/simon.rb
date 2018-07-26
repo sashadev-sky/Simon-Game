@@ -1,7 +1,7 @@
 require 'colorize'
 
 class Simon
-  COLORS = %w(green red yellow blue)
+  COLORS = %w(green red yellow blue).freeze.each(&:freeze)
 
   attr_reader :sequence_length, :game_over
 
